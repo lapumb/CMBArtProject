@@ -112,6 +112,8 @@ int mutateGel(char board[][SIZE])
     char key;
     int play = 0, count = 0;
     int index = 0;
+    int random = rand() % 3; 
+    int ranCol = rand() % 8;
     while (play != 1 && count < SIZE)
     {
         count++;
@@ -135,6 +137,12 @@ int mutateGel(char board[][SIZE])
                 if (ran == 0 && index > 1)
                 {
                     board[index + ran][m - 1] = EMPTY;
+                }
+ 
+                if(random == 0) {
+                    for(int i = 0; i < SIZE; i++) {
+                        board[i][ranCol] = board[i][0]; 
+                    }
                 }
             }
         }
@@ -191,6 +199,7 @@ void prepareGel()
 bool guess(char board[][SIZE], int col)
 {
     int count = 0;
+    col -= 1; 
     for (int i = 0; i < SIZE; i++)
     {
         if (board[i][0] == board[i][col])

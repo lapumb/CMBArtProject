@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
 		if (matches(board) == 1)
 		{
 			int col;
+			printf("\nEnter the suspect (well) number of the matching DNA: "); 
 			scanf("%d", &col);
 			if (guess(board, col))
 			{
@@ -56,6 +57,7 @@ int main(int argc, char *argv[])
 			}
 			else
 			{
+				printf("Not sure how you had a match and could not see the right well. You lose.\n\n"); 
 				gameOver();
 			}
 		}
