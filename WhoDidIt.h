@@ -18,7 +18,7 @@
 
 #define EMPTY ' ' //an empty cell
 
-#define FRAGMENT '_' //a fragment
+#define FRAGMENT '-' //a fragment
 
 #define NUMBER_OF_STORIES 5 //number of stories available
 
@@ -28,6 +28,27 @@ void displayBoard(char board[][SIZE]);
 // Initializes the board with start configuration of discs (see project specs)
 void initializeBoard(char board[][SIZE]);
 
-void setStory(int random, char *analyst);
+//setting the story setting for the crime
+int setStory(char *analyst);
+
+//mutating the gel electrophoresis
+int mutateGel(char board[][SIZE]);
+
+void setGel(char board[][SIZE]); 
+
+//return matches (per column/well)
+int matches(char board[][SIZE]); 
+
+//is game over, if so, press any key except 'q' to replay
+void gameOver();
+
+//if game is won
+void gameWon(); 
+
+//if there is a match, what is the column num?
+bool guess(char board[][SIZE], int col);
+
+//prepares sample for processing
+void prepareGel();  
 
 #endif /* WHODIDIT_H_ */
