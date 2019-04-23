@@ -75,6 +75,7 @@ int setStory(char *analyst)
     }
 
     printf("\nGreat! Run the gel electrophoresis and let us know any results! \n");
+    printf("\n------------------------------------------------------------------------------------------------------------------\n");
 
     prepareGel();
 
@@ -123,6 +124,7 @@ int mutateGel(char board[][SIZE])
         printf("To stop the process, enter the 's' key. To continue, press ENTER.\n"); 
         scanf("%c", &key);
         key = toupper(key);
+        printf("\n------------------------------------------------------------------------------------------------------------------\n");
         if (key == 'S')
         {
             play = 1;
@@ -182,16 +184,20 @@ void prepareGel()
 {
     //will reach here only if 'Y' is selected
     printf("\nWe have already amplified the DNA samples, so lets start by adding the restriction enzymes. \n");
-    printf("We will be using Bam HI, Hin dIII, and Eco RI. \n");
+    printf("We will be using Bam HI, Hin dIII, and Eco RI enzymes. \n");
+    printf("Using multiple enzymes creates more fragments and uniquness between samples, allowing for clearer results. \n\n");
     printf("Press ENTER to add the enzymes to each respected samples. %c", getchar());
     getchar();
+    printf("\n------------------------------------------------------------------------------------------------------------------\n");
 
     printf("\nNow that we have prepared the samples, lets prepare the gel.\n");
     printf("Press ENTER to prepare the gel.");
     getchar();
+    printf("\n------------------------------------------------------------------------------------------------------------------\n");
 
     printf("\nNow that we have the gel and the samples prepared, lets fill the wells in the gel with each respected sample. \n");
     printf("Well #0 is the recovered DNA, and each proceeding well is a suspect. \n");
+    printf("The numbers on the left side are the fragment size (units = base pairs).\n");
     printf("Press ENTER to run the gel electrophoresis on the samples.");
     getchar();
 }
